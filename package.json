@@ -1,27 +1,24 @@
 {
-  "name": "glitch-hello-node",
-  "version": "0.1.0",
-  "description": "A simple Node app built on fastify, instantly up and running. Built to be remixed on Glitch.com.",
-  "main": "server.js",
+  "name": "raven",
+  "version": "9.9.9",
+  "description": "Discord.JS v14 Slash Uyumlu Altyapı",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
-  "dependencies": {
-    "fastify": "^4.21.0",
-    "handlebars": "^4.7.8",
-    "@fastify/formbody": "^7.4.0",
-    "@fastify/static": "^6.10.2",
-    "@fastify/view": "^8.0.0"
-  },
-  "engines": {
-    "node": "14.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-hello-node"
-  },
+  "author": "",
   "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch"
-  ]
+  "dependencies": {
+    "@discordjs/rest": "^1.1.0",
+    "croxydb": "^0.0.7",
+    "discord-api-types": "^0.37.5",
+    "discord.js": "^14.3.0",
+    "moment": "^2.29.4",
+    "moment-duration-format": "^2.3.2",
+    "os": "^0.1.2",
+    "request": "^2.88.2"
+  },
+   "engines": {
+    "node": "16.x"
+  }
 }
