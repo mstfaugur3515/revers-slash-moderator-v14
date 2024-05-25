@@ -48,7 +48,7 @@ console.log(`[EVENT] ${name} eventi yüklendi.`)
 
 
 client.login(process.env.TOKEN).catch(err => {
-console.error('[!] Geçersiz Token.Giriş Yapılamadı!')
+console.error('[!] Gerçesiz token.Giriş yapılamadı!')
 console.error(err.message)
 });
 
@@ -214,8 +214,8 @@ client.once('ready', message => {
    let guild = client.guilds.cache.get(config.guildid)
         
    const stats = db.get(`statkanal1_${guild}`) || ""
-		
 
+		
 
   setInterval(() => {
 	      client.channels.cache.get(stats).setName(`🟢 ${guild.members.cache.filter(m => m.presence?.status == 'online').size} ⛔ ${guild.members.cache.filter(m => m.presence?.status == 'dnd').size} 🌙 ${guild.members.cache.filter(m => m.presence?.status == 'idle').size} ⚫ ${guild.members.cache.filter(m => m.presence?.status == 'offline' || !m.presence).size} `)
