@@ -7,25 +7,25 @@ module.exports = {
     options: [
         {
             name:"kanal1",
-            description:"Ayarlama İşlemleri",
+            description:"Sunucu aktiflik durumu",
             type:7,
             required:true   
         },
         {
             name:"kanal2",
-            description:"Ayarlama İşlemleri",
+            description:"Sunucuda bulunan toplam kullanıcı",
             type:7,
             required:true        
         },
         {
             name:"kanal3",
-            description:"Ayarlama İşlemleri",
+            description:"Toplam üye sayısı",
             type:7,
             required:true          
         },
         {
             name:"kanal4",
-            description:"Ayarlama İşlemleri",
+            description:"Bot sayısı",
             type:7,
             required:true             
         },

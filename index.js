@@ -206,27 +206,12 @@ message.channel.send(`<@${message.author.id}> Aleykümselam, Hoşgeldin ☺️`)
 })
 
 
-let options = {
-    toplam: "1237906856635007078",
-    üye: "1237906879997542431",
-    bot: "1237906897223553076",
-    status: "",
-};
-
-
-
 client.once('ready', message => {
-        let guild = client.guilds.cache.get('826931771139686421')
+   let guild = client.guilds.cache.get('826931771139686421')
         
- const stats = db.get(`statkanal1_${guild}`) || ""
-   const toplam = db.get(`statkanal2_${guild}`) || ""
-   const uye = db.get(`statkanal3_${guild}`) || ""
-   const bot = db.get(`statkanal4_${guild}`) || ""
-
+   const stats = db.get(`statkanal1_${guild}`) || ""
 		
-      client.channels.cache.get("").setName(`💜 Toplam ${guild.memberCount}`); // You can change this text, but still ke ep ${guild.memberCount}, as it defines total members.
-      client.channels.cache.get("").setName(`💜 Uye ${guild.members.cache.filter((m) => !m.user.bot).size}`); // This text is also changeable, still keep the code in ${}'s
-      client.channels.cache.get("").setName(`🤖 Bot: ${guild.members.cache.filter((m) => m.user.bot).size}`); // This text is also changeable, still keep the code in ${}
+
 
   setInterval(() => {
 	      client.channels.cache.get(stats).setName(`🟢 ${guild.members.cache.filter(m => m.presence?.status == 'online').size} ⛔ ${guild.members.cache.filter(m => m.presence?.status == 'dnd').size} 🌙 ${guild.members.cache.filter(m => m.presence?.status == 'idle').size} ⚫ ${guild.members.cache.filter(m => m.presence?.status == 'offline' || !m.presence).size} `)
@@ -245,9 +230,9 @@ client.on("guildMemberAdd", member => {
    const uye = db.get(`statkanal3_${member.guild.id}`) || ""
    const bot = db.get(`statkanal4_${member.guild.id}`) || ""
  
-      member.guild.channels.cache.get(options.toplam).setName(`💜 Toplam ${member.guild.memberCount}`)
-      member.guild.channels.cache.get(options.üye).setName(`💜 Uye ${member.guild.members.cache.filter((m) => !m.user.bot).size}`); // This text is also changeable, still keep the code in ${}'s
-      member.guild.channels.cache.get(options.bot).setName(`🤖 Bot - ${member.guild.members.cache.filter(member => member.user.bot).size}`)
+      member.guild.channels.cache.get(toplam).setName(`💜 Toplam ${member.guild.memberCount}`)
+      member.guild.channels.cache.get(uye).setName(`💜 Uye ${member.guild.members.cache.filter((m) => !m.user.bot).size}`); // This text is also changeable, still keep the code in ${}'s
+      member.guild.channels.cache.get(bot).setName(`🤖 Bot - ${member.guild.members.cache.filter(member => member.user.bot).size}`)
   	//	member.guild.channels.cache.get("1241974151280066572").setName(`🟢 ${member.guild.members.cache.filter(m => m.presence?.status == 'online').size} ⛔ ${member.guild.members.cache.filter(m => m.presence?.status == 'dnd').size} 🌙 ${member.guild.members.cache.filter(m => m.presence?.status == 'idle').size} ⚫ ${member.guild.members.cache.filter(m => m.presence?.status == 'offline' || !m.presence).size} `)
 
 });
@@ -260,8 +245,8 @@ client.on("guildMemberRemove", (member) => {
    const bot = db.get(`statkanal4_${member.guild.id}`) || ""
  
       member.guild.channels.cache.get(toplam).setName(`💜 Toplam ${member.guild.memberCount}`)
-      member.guild.channels.cache.get(toplam).setName(`💜 Uye ${member.guild.members.cache.filter((m) => !m.user.bot).size}`); // This text is also changeable, still keep the code in ${}'s
-      member.guild.channels.cache.get(toplam).setName(`🤖 Bot - ${member.guild.members.cache.filter(member => member.user.bot).size}`)
+      member.guild.channels.cache.get(uye).setName(`💜 Uye ${member.guild.members.cache.filter((m) => !m.user.bot).size}`); // This text is also changeable, still keep the code in ${}'s
+      member.guild.channels.cache.get(bot).setName(`🤖 Bot - ${member.guild.members.cache.filter(member => member.user.bot).size}`)
   	//	member.guild.channels.cache.get("1241974151280066572").setName(`🟢 ${member.guild.members.cache.filter(m => m.presence?.status == 'online').size} ⛔ ${member.guild.members.cache.filter(m => m.presence?.status == 'dnd').size} 🌙 ${member.guild.members.cache.filter(m => m.presence?.status == 'idle').size} ⚫ ${member.guild.members.cache.filter(m => m.presence?.status == 'offline' || !m.presence).size} `)
 
 });
