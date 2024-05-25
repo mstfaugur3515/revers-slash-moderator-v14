@@ -8,26 +8,26 @@ module.exports = {
         {
             name:"kanal1",
             description:"Ayarlama İşlemleri",
-            type:1,
-            options:[{name:"kanal",description:"Kayıtsız Kanalını Ayarlar!",type:7,required:true,channel_types:[0]}]            
+            type:3,
+            required:true   
         },
         {
             name:"kanal2",
             description:"Ayarlama İşlemleri",
-            type:1,
-            options:[{name:"kanal",description:"Kayıtsız Kanalını Ayarlar!",type:7,required:true,channel_types:[0]}]            
+            type:3,
+            required:true        
         },
         {
             name:"kanal3",
             description:"Ayarlama İşlemleri",
-            type:1,
-            options:[{name:"kanal",description:"Kayıtsız Kanalını Ayarlar!",type:7,required:true,channel_types:[0]}]            
+            type:3,
+            required:true          
         },
         {
             name:"kanal4",
             description:"Ayarlama İşlemleri",
-            type:1,
-            options:[{name:"kanal",description:"Kayıtsız Kanalını Ayarlar!",type:7,required:true,channel_types:[0]}]            
+            type:3,
+            required:true             
         },
        
     ],
