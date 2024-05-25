@@ -205,11 +205,12 @@ message.channel.send(`<@${message.author.id}> Aleykümselam, Hoşgeldin ☺️`)
 }
 })
 
-
+const toplam
 let options = {
-    total: "1237906856635007078",
-    users: "1237906879997542431",
-    bots: "1237906897223553076"
+    toplam: "1237906856635007078",
+    üye: "1237906879997542431",
+    bot: "1237906897223553076",
+    status: "",
 };
 
 
@@ -224,7 +225,7 @@ client.once('ready', message => {
      // client.channels.cache.get("1241974185769566229").setName(`🤖 Bot: ${guild.members.cache.filter((m) => m.user.bot).size}`); // This text is also changeable, still keep the code in ${}
 
   setInterval(() => {
-	      client.channels.cache.get('1241974151280066572').setName(`🟢 ${guild.members.cache.filter(m => m.presence?.status == 'online').size} ⛔ ${guild.members.cache.filter(m => m.presence?.status == 'dnd').size} 🌙 ${guild.members.cache.filter(m => m.presence?.status == 'idle').size} ⚫ ${guild.members.cache.filter(m => m.presence?.status == 'offline' || !m.presence).size} `)
+	      client.channels.cache.get(options.status).setName(`🟢 ${guild.members.cache.filter(m => m.presence?.status == 'online').size} ⛔ ${guild.members.cache.filter(m => m.presence?.status == 'dnd').size} 🌙 ${guild.members.cache.filter(m => m.presence?.status == 'idle').size} ⚫ ${guild.members.cache.filter(m => m.presence?.status == 'offline' || !m.presence).size} `)
 	      console.log(`[!] Güncelledim!`);
   }, 600000);
   
@@ -236,9 +237,9 @@ client.once('ready', message => {
 
 client.on("guildMemberAdd", member => {
  
-      member.guild.channels.cache.get("1241974168325718088").setName(`💜 Toplam ${member.guild.memberCount}`)
-      member.guild.channels.cache.get("1241974184033259570").setName(`💜 Uye ${member.guild.members.cache.filter((m) => !m.user.bot).size}`); // This text is also changeable, still keep the code in ${}'s
-      member.guild.channels.cache.get("1241974185769566229").setName(`🤖 Bot - ${member.guild.members.cache.filter(member => member.user.bot).size}`)
+      member.guild.channels.cache.get(options.toplam).setName(`💜 Toplam ${member.guild.memberCount}`)
+      member.guild.channels.cache.get(options.üye).setName(`💜 Uye ${member.guild.members.cache.filter((m) => !m.user.bot).size}`); // This text is also changeable, still keep the code in ${}'s
+      member.guild.channels.cache.get(options.bot).setName(`🤖 Bot - ${member.guild.members.cache.filter(member => member.user.bot).size}`)
   	//	member.guild.channels.cache.get("1241974151280066572").setName(`🟢 ${member.guild.members.cache.filter(m => m.presence?.status == 'online').size} ⛔ ${member.guild.members.cache.filter(m => m.presence?.status == 'dnd').size} 🌙 ${member.guild.members.cache.filter(m => m.presence?.status == 'idle').size} ⚫ ${member.guild.members.cache.filter(m => m.presence?.status == 'offline' || !m.presence).size} `)
 
 });
@@ -246,9 +247,9 @@ client.on("guildMemberAdd", member => {
 
 client.on("guildMemberRemove", (member) => {
  
-      member.guild.channels.cache.get("1241974168325718088").setName(`💜 Toplam ${member.guild.memberCount}`)
-      member.guild.channels.cache.get("1241974184033259570").setName(`💜 Uye ${member.guild.members.cache.filter((m) => !m.user.bot).size}`); // This text is also changeable, still keep the code in ${}'s
-      member.guild.channels.cache.get("1241974185769566229").setName(`🤖 Bot - ${member.guild.members.cache.filter(member => member.user.bot).size}`)
+      member.guild.channels.cache.get(options.toplam).setName(`💜 Toplam ${member.guild.memberCount}`)
+      member.guild.channels.cache.get(options.üye).setName(`💜 Uye ${member.guild.members.cache.filter((m) => !m.user.bot).size}`); // This text is also changeable, still keep the code in ${}'s
+      member.guild.channels.cache.get(options.bot).setName(`🤖 Bot - ${member.guild.members.cache.filter(member => member.user.bot).size}`)
   	//	member.guild.channels.cache.get("1241974151280066572").setName(`🟢 ${member.guild.members.cache.filter(m => m.presence?.status == 'online').size} ⛔ ${member.guild.members.cache.filter(m => m.presence?.status == 'dnd').size} 🌙 ${member.guild.members.cache.filter(m => m.presence?.status == 'idle').size} ⚫ ${member.guild.members.cache.filter(m => m.presence?.status == 'offline' || !m.presence).size} `)
 
 });

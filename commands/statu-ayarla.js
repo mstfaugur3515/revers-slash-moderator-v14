@@ -8,25 +8,25 @@ module.exports = {
         {
             name:"kanal1",
             description:"Ayarlama İşlemleri",
-            type:1,
+            type:7,
             required:true   
         },
         {
             name:"kanal2",
             description:"Ayarlama İşlemleri",
-            type:2,
+            type:7,
             required:true        
         },
         {
             name:"kanal3",
             description:"Ayarlama İşlemleri",
-            type:3,
+            type:7,
             required:true          
         },
         {
             name:"kanal4",
             description:"Ayarlama İşlemleri",
-            type:4,
+            type:7,
             required:true             
         },
        
