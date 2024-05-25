@@ -47,7 +47,11 @@ console.log(`[EVENT] ${name} eventi yüklendi.`)
 });
 
 
-client.login(process.env.TOKEN)
+client.login(process.env.TOKEN).catch(err => {
+console.error('[!] Geçersiz Token.Giriş Yapılamadı!')
+console.error(err.message)
+});
+
 
 client.on("guildMemberAdd", async (member) => {
    const rol = db.get(`otorol_${member.guild.id}`)
