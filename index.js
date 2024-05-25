@@ -207,7 +207,7 @@ message.channel.send(`<@${message.author.id}> Aleykümselam, Hoşgeldin ☺️`)
 
 
 client.once('ready', message => {
-   let guild = client.guilds.cache.get('826931771139686421')
+   let guild = client.guilds.cache.get(config.guildid)
         
    const stats = db.get(`statkanal1_${guild}`) || ""
 		
