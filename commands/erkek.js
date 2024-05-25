@@ -52,18 +52,19 @@ module.exports = {
     let capitalizedString = isim[0].toUpperCase() + isim.slice(1);
   
     
-setTimeout(function(){
-    user.setNickname(`${capitalizedString} [${yas}]`)
-},500)
-setTimeout(function(){
-    interaction.guild.members.cache.get(user.id).roles.add([erkek, erkek2])
-},1500)
-setTimeout(function(){
-    interaction.guild.members.cache.get(user.id).roles.remove(kayıtsız)
-},2500)
-    interaction.reply({content: "Başarıyla <@"+user+"> Kullanıcısına <@&"+erkek+"> <@&"+erkek2+"> Rolü Verildi."})
+    setTimeout(function(){
+        user.setNickname(`${capitalizedString} [${yas}]`)
+    },500)
+    setTimeout(function(){
+        interaction.guild.members.cache.get(user.id).roles.add([erkek, erkek2])
+    },1500)
+    setTimeout(function(){
+        interaction.guild.members.cache.get(user.id).roles.remove(kayıtsız)
+    },2500)
+
 
     const sonsuz = client.emojis.cache.find(emoji => emoji.name === 'Verify');
+    
     const embed = new Discord.EmbedBuilder()
      .setColor('#E50000')
      .setThumbnail(`https://cdn.discordapp.com/attachments/1188118049887367168/1242065418621947975/male-symbol-blue-icon.png?ex=664c7b10&is=664b2990&hm=305860cea743814cda8dd232942cece77d54d5bd4008b21fef90bce43b77a98a&`)
@@ -81,7 +82,8 @@ setTimeout(function(){
    .setFooter({ text: `Komutu kullanan yetkili : ${interaction.user.tag}`, iconURL: `${interaction.user.displayAvatarURL({ dynamic: true})}` })
 
      .setImage("https://cdn.discordapp.com/attachments/1194810086103720076/1237882252999004320/aubergine.png?ex=663d432f&is=663bf1af&hm=e97cca0875e6c6cdd7b9a4a936e7c1b354998f18d10f0391fae1e48bb80b3d01&")
-     client.channels.cache.get(kayıtkanal).send({embeds: [embed]})
+         
+    interaction.reply({ embeds: [ embed ]})
     
 }
 

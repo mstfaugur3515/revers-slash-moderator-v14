@@ -42,13 +42,11 @@ module.exports = {
    let kadın = db.fetch(`kadın_${interaction.guild.id}`)
    let kadın2 = db.fetch(`kadın2_${interaction.guild.id}`)
    let kayıtsız = db.fetch(`otorol_${interaction.guild.id}`)
-   let kayıtkanal = db.get(`kayitkanal_${interaction.guild.id}`)
     
    if (!kadın) return interaction.reply("Erkek rolü ayarlanmamış!")
    if (!kadın2) return interaction.reply("Erkek2 rolü ayarlanmamış!")
    if (!kayıtsız) return interaction.reply("Kayıtsız rolü ayarlanmamış!")
-   if (!kayıtkanal) return interaction.reply("Kayıt kanal ayarlanmamış!")
-    
+ 
     let capitalizedString = isim[0].toUpperCase() + isim.slice(1);
     
   setTimeout(function(){
@@ -61,7 +59,6 @@ module.exports = {
       interaction.guild.members.cache.get(user.id).roles.remove(kayıtsız)
   },2000)
     
-    interaction.reply({content: "Başarıyla <@"+user+"> Kullanıcısına <@&"+kadın+"> <@&"+kadın2+"> Rolü Verildi."})
 
     const sonsuz = client.emojis.cache.find(emoji => emoji.name === 'Verify');
     const embed = new Discord.EmbedBuilder()
@@ -81,7 +78,8 @@ module.exports = {
    .setFooter({ text: `Komutu kullanan yetkili : ${interaction.user.tag}`, iconURL: `${interaction.user.displayAvatarURL({ dynamic: true})}` })
 
      .setImage("https://cdn.discordapp.com/attachments/1194810086103720076/1237882252999004320/aubergine.png?ex=663d432f&is=663bf1af&hm=e97cca0875e6c6cdd7b9a4a936e7c1b354998f18d10f0391fae1e48bb80b3d01&")
-     client.channels.cache.get(kayıtkanal).send({embeds: [embed]})
+  
+    interaction.reply({ embeds: [ embed ]})
     
 }
 
