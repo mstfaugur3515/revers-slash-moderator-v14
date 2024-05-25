@@ -1,49 +1,50 @@
 const { PermissionsBitField } = require("discord.js");
 const db = require("croxydb")
 module.exports = {
-    name:"stats-ayarla",
-    description: 'Kayıtlı rol ayarlarsın!',
+    name:"stats-kanal",
+    description: 'Aktiflik Kanal Sistemini Ayarlar!',
     type:1,
     options: [
         {
-            name:"rol",
-            description:"Lütfen bir rol etiketle!",
-            type:8,
-            required:true
+            name:"kanal1",
+            description:"Ayarlama İşlemleri",
+            type:1,
+            options:[{name:"kanal",description:"Kayıtsız Kanalını Ayarlar!",type:7,required:true,channel_types:[0]}]            
         },
         {
-            name:"rol2",
-            description:"Lütfen ikinci bir rol etiketle!",
-            type:8,
-            required:true
+            name:"kanal2",
+            description:"Ayarlama İşlemleri",
+            type:1,
+            options:[{name:"kanal",description:"Kayıtsız Kanalını Ayarlar!",type:7,required:true,channel_types:[0]}]            
         },
         {
-            name:"rol3",
-            description:"Lütfen ikinci bir rol etiketle!",
-            type:8,
-            required:true
+            name:"kanal3",
+            description:"Ayarlama İşlemleri",
+            type:1,
+            options:[{name:"kanal",description:"Kayıtsız Kanalını Ayarlar!",type:7,required:true,channel_types:[0]}]            
         },
         {
-            name:"rol4",
-            description:"Lütfen ikinci bir rol etiketle!",
-            type:8,
-            required:true
+            name:"kanal4",
+            description:"Ayarlama İşlemleri",
+            type:1,
+            options:[{name:"kanal",description:"Kayıtsız Kanalını Ayarlar!",type:7,required:true,channel_types:[0]}]            
         },
-       
        
     ],
   run: async(client, interaction) => {
 
-    if(!interaction.member.permissions.has(PermissionsBitField.Flags.ManageRoles)) return interaction.reply({content: "Rolleri Yönet Yetkin Yok!", ephemeral: true})
-    const rol = interaction.options.getRole('rol')
-    db.set(`rol1_${interaction.guild.id}`, rol.id)
-    const rol2 = interaction.options.getRole('rol2')
-    db.set(`rol2_${interaction.guild.id}`, rol2.id)
-    const rol3 = interaction.options.getRole('rol3')
-    db.set(`rol3_${interaction.guild.id}`, rol2.id)
-    const rol4 = interaction.options.getRole('rol4')
-    db.set(`rol4_${interaction.guild.id}`, rol2.id)
-    interaction.reply({content: "Kayıtlı Rolü Başarıyla <@&"+rol+"> - <@&"+rol2+"> Olarak Ayarlandı."})
+    if(!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) return interaction.reply({content: "Kanalları Yönet Yetkin Yok!", ephemeral: true})
+    
+    const kanal1 = interaction.options.getChannel('kanal1')
+   db.set(`statkanal1_${interaction.guild.id}`, kanal1.id)
+    const kanal2 = interaction.options.getChannel('kanal2')
+   db.set(`statkanal2_${interaction.guild.id}`, kanal2.id)
+    const kanal3 = interaction.options.getChannel('kanal3')
+   db.set(`statkanal3_${interaction.guild.id}`, kanal3.id)
+    const kanal4 = interaction.options.getChannel('kanal4')
+   db.set(`statkanal4_${interaction.guild.id}`, kanal4.id)
+    
+   interaction.reply("Hoşgeldin Kanalı Kanalı Başarıyla <#"+kanal1+"> Olarak Ayarlandı!")
 }
 
 };
